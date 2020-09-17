@@ -3,28 +3,22 @@ Iquidus Explorer - 1.6.1
 
 An open source block explorer written in node.js.
 
-### See it in action
-
-*  [Jumbucks](http://explorer.getjumbucks.com)
-*  [Sphere](http://sphere.iquidus.io)
-*  [SAR](http://explorer.sarcoin.info)
-*  [Vanillacoin](https://blockchain.vanillacoin.net/)
-*  [Neoscoin](http://explorer.infernopool.com/)  
-*  [C2Chain](http://c2chain.info/)
-
-*note: If you would like your instance mentioned here contact me*
-
 ### Requires
 
 *  node.js >= 0.10.28
 *  mongodb 2.6.x
 *  *coind
 
+### Installation of dependancies
+
+    apt install npm
+    npm i mongodb
+
 ### Create database
 
 Enter MongoDB cli:
 
-    $ mongo
+    mongo
 
 Create databse:
 
@@ -33,10 +27,7 @@ Create databse:
 Create user with read/write access:
 
     > db.createUser( { user: "iquidus", pwd: "3xp!0reR", roles: [ "readWrite" ] } )
-
-*note: If you're using mongo shell 2.4.x, use the following to create your user:
-
-    > db.addUser( { user: "username", pwd: "password", roles: [ "readWrite"] })
+    > exit
 
 ### Get the source
 
@@ -71,6 +62,8 @@ To stop the cluster you can use
 sync.js (located in scripts/) is used for updating the local databases. This script must be called from the explorers root directory.
 
     Usage: node scripts/sync.js [database] [mode]
+    
+    scripts/sync.js index update
 
     database: (required)
     index [mode] Main index: coin info/stats, transactions & addresses
